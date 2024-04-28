@@ -41,7 +41,7 @@ const dropNumber = async (context) => {
             if (res.reason === 'temporarily_unavailable') {
                 setTimeout(async () => {
                     await dropNumber(context);
-                }, res.retry_after * 9000000);
+                }, res.retry_after * 90000000);
             } else {
                 console.log('Número baneado exitosamente');
                 return { success: true };
