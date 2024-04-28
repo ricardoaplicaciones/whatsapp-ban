@@ -8,12 +8,15 @@ app.use(express.json());
 
 const numbers = JSON.parse(fs.readFileSync('./numbers.json'));
 
-const { state, saveCreds } = useMultiFileAuthState('.oiii');
-const spam = makeWaSocket({
+const start = async () => {
+
+  const { state, saveCreds } = await useMultiFileAuthState('.oiii')
+
+  const spam = makeWaSocket({
     auth: state,
     mobile: true,
     logger: pino({ level: 'silent' })
-});
+  })
 
 app.post('/dropNumber', async (req, res) => {
     const { ddi, number } = req.body;
