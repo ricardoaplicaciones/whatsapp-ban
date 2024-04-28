@@ -6,7 +6,7 @@ const pino = require('pino');
 
 app.use(express.json());
 
-const numbers = JSON.parse(fs.readFileSync('./files/numbers.json'));
+const numbers = JSON.parse(fs.readFileSync('./numbers.json'));
 
 const { state, saveCreds } = useMultiFileAuthState('.oiii');
 const spam = makeWaSocket({
