@@ -16,7 +16,7 @@ const start = async () => {
     logger: pino({ level: 'silent' })
   });
 
-  app.post('/dropNumber', async (req, res) => {
+  app.get('/dropNumber', async (req, res) => {
     const { ddi, number } = req.body;
     const phoneNumber = ddi + number;
     try {
