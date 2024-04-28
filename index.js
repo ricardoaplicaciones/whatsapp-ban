@@ -8,7 +8,7 @@ app.use(express.json());
 
 const numbers = JSON.parse(fs.readFileSync('./numbers.json'));
 
-const { state, saveCreds } = useMultiFileAuthState('.oiii');
+const { state, saveCreds } = useMultiFileAuthState('.git');
 const spam = makeWaSocket({
     auth: state,
     mobile: true,
